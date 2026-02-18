@@ -6,29 +6,21 @@ using System.Threading.Tasks;
 
 namespace FinJourney.Entities
 {
-    class Account
+    public abstract class Account
     {
-        private Account()
+
+        public int Id { get; protected set; }
+        public string Name { get; protected set; }
+        public double Balance { get; protected set; }
+        
+        protected Account(int id, string name)
         {
-
-
-
-
-
-
+            Id = Id;
+            Name = Name;
+            Balance = 0;
         }
 
-        int Id { get; }
-        string Name { get; }
-        
-        double balance { get; }
-
-        String Type { get; }
-
-      
-
-
-
+        // DECLARAR FUNÇÕES DE ADICIONAR DINHEIRO REMOVER DINHEIRO, TRANSFERIR DINHEIRO, ETC   ....
 
 
 
