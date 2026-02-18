@@ -1,7 +1,0 @@
-C:\Users\fm684\Desktop\CÓDIGO\FinJourney\FinJourney\bin\Debug\FinJourney.exe.config
-C:\Users\fm684\Desktop\CÓDIGO\FinJourney\FinJourney\bin\Debug\FinJourney.exe
-C:\Users\fm684\Desktop\CÓDIGO\FinJourney\FinJourney\bin\Debug\FinJourney.pdb
-C:\Users\fm684\Desktop\CÓDIGO\FinJourney\FinJourney\obj\Debug\FinJourney.csproj.AssemblyReference.cache
-C:\Users\fm684\Desktop\CÓDIGO\FinJourney\FinJourney\obj\Debug\FinJourney.csproj.CoreCompileInputs.cache
-C:\Users\fm684\Desktop\CÓDIGO\FinJourney\FinJourney\obj\Debug\FinJourney.exe
-C:\Users\fm684\Desktop\CÓDIGO\FinJourney\FinJourney\obj\Debug\FinJourney.pdb
