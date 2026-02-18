@@ -20,7 +20,43 @@ namespace FinJourney.Entities
             Balance = 0;
         }
 
-        // DECLARAR FUNÇÕES DE ADICIONAR DINHEIRO REMOVER DINHEIRO, TRANSFERIR DINHEIRO, ETC   ....
+
+
+        public virtual void AddMoney (double amounnt) 
+        {
+
+            if (amounnt <= 0)
+            {
+                throw new ArgumentException("Valor deve ser maior que zero");
+            }
+
+            else 
+            {
+                Balance += amounnt;     
+            }
+        
+        }
+        
+        public virtual void RemoveMoney (double amounnt)
+        {
+
+            if (amounnt < 0)
+            {
+
+                throw new ArgumentException("Valor deve ser maior que zero");
+
+            }
+
+            else
+            {
+                Balance -= amounnt;
+            }
+
+        }
+        
+        
+        
+        // Futuramente adicionar tranferência entre contas.
 
 
 
