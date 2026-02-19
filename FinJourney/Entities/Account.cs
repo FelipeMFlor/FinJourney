@@ -20,8 +20,6 @@ namespace FinJourney.Entities
             Balance = 0;
         }
 
-
-
         public virtual void AddMoney (double amounnt) 
         {
 
@@ -45,6 +43,10 @@ namespace FinJourney.Entities
 
                 throw new ArgumentException("Valor deve ser maior que zero");
 
+            }
+            else if (amounnt > Balance)
+            {
+                throw new ArgumentException("Valor deve ser menor ou igual ao saldo atual");
             }
 
             else
