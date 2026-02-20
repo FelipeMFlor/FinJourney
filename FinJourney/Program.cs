@@ -5,59 +5,75 @@ using System.Text;
 using System.Threading.Tasks;
 using FinJourney.Entities;
 namespace FinJourney
-{0
+{
     public class Program
     {
         static void Main(string[] args)
         {      
+
+            // Corrigir o método que exibe informações, ele está trazendo somente o saldo, porém o nome e id aparecem zerados.
+
             BankAccount account = new BankAccount(1, "Conta Corrente");
 
-            // Ajustar para que o menu funcione normalmente e os testes possam prosseguir.
+            Menu(account);
 
-
-            Menu();
-
-            Console.ReadKey();
         }
 
-        public static void Menu()
+        public static void Menu(BankAccount account)
         {
-            Console.WriteLine("Escolha a operação que deseja realizar:");
-            Console.WriteLine("1 - Adicionar dinheiro");
-            Console.WriteLine("2 - Retirar dinheiro");
-            Console.WriteLine("3 - Informações da conta");
 
-            Console.ReadLine();
-          int chose = int.Parse(Console.ReadLine());
-          
-          switch (chose)
+            bool running = true;
+
+            while (running)
             {
-                case 1: AdicionarDinheiro();
-                    break;
+                Console.WriteLine("Escolha a operação que deseja realizar:");
+                Console.WriteLine("1 - Adicionar dinheiro");
+                Console.WriteLine("2 - Retirar dinheiro");
+                Console.WriteLine("3 - Informações da conta");
 
-                case 2: RetirarDinheiro();
-                    break;
+                string input = Console.ReadLine();
+                int chose;
+                if(!int.TryParse(input, out chose))
+                {
+                    Console.WriteLine("Número digitado inválido");
+                    continue;
+                }
 
-                case 3: InfoConta();
-                    break;
+                switch (chose)
+                {
+                    case 1:
+                        AdicionarDinheiro(account);
+                        break;
 
-                default: Console.WriteLine("Obrigado por utilizar o sistema"); break;
+                    case 2:
+                        RetirarDinheiro(account);
+                        break;
 
+                    case 3:
+                        InfoConta(account);
+                        break;
+
+                    case 0:
+                        running = false;
+                        break;
+
+                    default: Console.WriteLine("Opção inválida!"); break;
+
+                }
             }
-        }   
+        }
 
-
-
-
-        public static void AdicionarDinheiro(BankAccount account, double value)
+        public static void AdicionarDinheiro(BankAccount account)
         {
             Console.WriteLine("Insira o valor que deseja adicionar:");
+            double value = double.Parse(Console.ReadLine());
             account.AddMoney(value);
         }
 
-        public static void RetirarDinheiro(BankAccount account, double value)
+        public static void RetirarDinheiro(BankAccount account)
         {
             Console.WriteLine("Insira o valor que deseja retirar:");
+            double value = double.Parse(Console.ReadLine());
             account.RemoveMoney(value);
         }
 
